@@ -78,6 +78,15 @@ void Input(GameManager *gm) {
     }
 }
 
+void Run(GameManager *gm) {
+    while (!gm->quit) {
+        Draw(gm);
+        Input(gm);
+        MoveBall(&gm->ball);
+        Sleep(20);
+    }
+}
+
 int main(){
 
     return 0;
