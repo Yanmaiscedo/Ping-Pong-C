@@ -30,6 +30,18 @@ typedef struct {
 } GameManager;
 
 
+void MoveBall(Ball *ball) {
+    switch (ball->direction) {
+        case LEFT: ball->x--; break;
+        case RIGHT: ball->x++; break;
+        case UPLEFT: ball->x--; ball->y--; break;
+        case DOWNLEFT: ball->x--; ball->y++; break;
+        case UPRIGHT: ball->x++; ball->y--; break;
+        case DOWNRIGHT: ball->x++; ball->y++; break;
+        default: break;
+    }
+}
+
 void Draw(GameManager *gm) {
     system("cls");
     for (int i = 0; i < gm->width + 2; i++) printf("#");
