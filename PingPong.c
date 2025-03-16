@@ -66,6 +66,18 @@ void Draw(GameManager *gm) {
     for (int i = 0; i < gm->width + 2; i++) printf("#");
     printf("\nScore 1: %d    Score 2: %d\n", gm->score1, gm->score2);
 }
+
+void Input(GameManager *gm) {
+    if (_kbhit()) {
+        char current = _getch();
+        if (current == gm->up1 && gm->player1.y > 0) gm->player1.y--;
+        if (current == gm->down1 && gm->player1.y < gm->height - 4) gm->player1.y++;
+        if (current == gm->up2 && gm->player2.y > 0) gm->player2.y--;
+        if (current == gm->down2 && gm->player2.y < gm->height - 4) gm->player2.y++;
+        if (current == 'q') gm->quit = 1;
+    }
+}
+
 int main(){
 
     return 0;
