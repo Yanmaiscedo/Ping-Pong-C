@@ -29,6 +29,11 @@ typedef struct {
     Paddle player2;
 } GameManager;
 
+void ResetBall(Ball *ball) {
+    ball->x = ball->originalX;
+    ball->y = ball->originalY;
+    ball->direction = STOP;
+}
 
 void MoveBall(Ball *ball) {
     switch (ball->direction) {
