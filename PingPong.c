@@ -88,6 +88,8 @@ void Run(GameManager *gm) {
 }
 
 int main(){
-
+    GameManager gm = {50, 25, 0, 0, 'w', 's', 'i', 'k', 0, {25, 12, 25, 12, STOP}, {1, 12, 1, 12}, {48, 12, 48, 12}};
+    Run(&gm);
+    return 0;
     return 0;
 }
